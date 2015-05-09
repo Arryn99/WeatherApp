@@ -9,14 +9,18 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *mCoordinateLabel;
 
 @end
 
 @implementation ViewController
+@synthesize mCoordinateLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    mCoordinateLabel.text = @"The weather is: ";
 }
 
 - (void)didReceiveMemoryWarning {
