@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mCoordinateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mLatitude;
 @property (weak, nonatomic) IBOutlet UILabel *mLongitude;
-@property (weak, nonatomic) IBOutlet UILabel *mAddress;
 
 @end
 
@@ -20,7 +19,6 @@
 @synthesize mCoordinateLabel;
 @synthesize mLatitude;
 @synthesize mLongitude;
-@synthesize mAddress;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

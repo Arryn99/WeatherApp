@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzT-fl-WHc">
-                                <rect key="frame" x="279" y="289" width="42" height="20.5"/>
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="L1Y-Va-34A"/>
                                     <constraint firstAttribute="height" constant="21" id="pPT-53-E8O"/>
@@ -34,7 +34,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-vL-9GD">
-                                <rect key="frame" x="208" y="211" width="68" height="20.5"/>
+                                <rect key="frame" x="208" y="211" width="68" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="KsR-HS-ZyD"/>
                                     <constraint firstAttribute="height" constant="21" id="gHv-pH-GYZ"/>
@@ -49,9 +49,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lat:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-46-9t5">
-                                <rect key="frame" x="208" y="131" width="29" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-46-9t5">
+                                <rect key="frame" x="208" y="131" width="29" height="21"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1GD-0d-bJm"/>
                                     <constraint firstAttribute="width" constant="42" id="Ffb-6Z-HfQ"/>
                                     <constraint firstAttribute="height" constant="21" id="bvt-SV-DkF"/>
                                 </constraints>
@@ -85,7 +86,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-zo-ld2">
-                                <rect key="frame" x="208" y="65" width="43.5" height="20.5"/>
+                                <rect key="frame" x="208" y="65" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Qzh-qj-hU2"/>
                                     <constraint firstAttribute="width" constant="42" id="t9T-lf-tdS"/>
@@ -105,22 +106,28 @@
                         <constraints>
                             <constraint firstItem="u1h-Hi-7b9" firstAttribute="bottom" secondItem="NSS-46-9t5" secondAttribute="bottom" constant="-98.5" id="BLo-jW-Syd"/>
                             <constraint firstAttribute="bottom" secondItem="S8k-YB-upv" secondAttribute="bottom" constant="115" id="GTg-If-u3R"/>
+                            <constraint firstItem="NSS-46-9t5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="131" id="Hha-PX-bnB"/>
                             <constraint firstItem="NSS-46-9t5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="JCu-cd-iCt"/>
                             <constraint firstItem="cAS-zo-ld2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="192" id="N3i-ye-tkg"/>
                             <constraint firstAttribute="centerY" secondItem="JzT-fl-WHc" secondAttribute="centerY" constant="0.5" id="Ppa-9X-pZH"/>
                             <constraint firstAttribute="centerX" secondItem="JzT-fl-WHc" secondAttribute="centerX" id="Umf-wZ-Ypq"/>
                             <constraint firstItem="0ts-vL-9GD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="192" id="Xzo-dD-mRW"/>
                             <constraint firstItem="u1h-Hi-7b9" firstAttribute="bottom" secondItem="NSS-46-9t5" secondAttribute="bottom" constant="-98.5" id="cnv-7Z-MdS"/>
+                            <constraint firstItem="NSS-46-9t5" firstAttribute="leading" secondItem="cAS-zo-ld2" secondAttribute="leading" id="cuR-wS-Ucl"/>
                             <constraint firstItem="u1h-Hi-7b9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="ddw-eu-Bnd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0ts-vL-9GD" secondAttribute="bottom" constant="368.5" id="eGE-fm-MU0"/>
                             <constraint firstAttribute="centerX" secondItem="u1h-Hi-7b9" secondAttribute="centerX" id="fBH-2y-ZWg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S8k-YB-upv" secondAttribute="trailing" constant="261" id="g6s-za-bdw"/>
+                            <constraint firstItem="0ts-vL-9GD" firstAttribute="top" secondItem="NSS-46-9t5" secondAttribute="bottom" constant="59" id="gXO-op-76o"/>
                             <constraint firstItem="u1h-Hi-7b9" firstAttribute="bottom" secondItem="cAS-zo-ld2" secondAttribute="bottom" constant="-28.5" id="hH6-Go-3ek"/>
                             <constraint firstItem="NSS-46-9t5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="192" id="lvB-oM-dfh"/>
                             <constraint firstItem="u1h-Hi-7b9" firstAttribute="leading" secondItem="cAS-zo-ld2" secondAttribute="leading" id="sij-92-3Xl"/>
                             <constraint firstAttribute="centerX" secondItem="S8k-YB-upv" secondAttribute="centerX" id="z5c-IE-Dfa"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0ts-vL-9GD"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="BLo-jW-Syd"/>
                                 <exclude reference="cnv-7Z-MdS"/>
@@ -132,7 +139,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mAddress" destination="0ts-vL-9GD" id="D3o-lY-vxt"/>
                         <outlet property="mCoordinateLabel" destination="JzT-fl-WHc" id="s88-iu-7oe"/>
                         <outlet property="mLatitude" destination="NSS-46-9t5" id="gFK-8s-vZp"/>
                         <outlet property="mLongitude" destination="cAS-zo-ld2" id="PHb-WD-CXT"/>
