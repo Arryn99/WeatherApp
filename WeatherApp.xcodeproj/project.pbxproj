@@ -14,6 +14,14 @@
 		900F3ABC1AFE5497007ABDDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900F3ABB1AFE5497007ABDDE /* Images.xcassets */; };
 		900F3ABF1AFE5497007ABDDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */; };
 		900F3ACB1AFE5497007ABDDE /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3ACA1AFE5497007ABDDE /* WeatherAppTests.m */; };
+		90312EBA1B07A81C0083B8A1 /* RestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 90312EB91B07A81C0083B8A1 /* RestClient.m */; };
+		90AA58811B07EEAD000C3822 /* JSBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58741B07EEAD000C3822 /* JSBaseClass.m */; };
+		90AA58821B07EEAD000C3822 /* JSClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58761B07EEAD000C3822 /* JSClouds.m */; };
+		90AA58831B07EEAD000C3822 /* JSCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58781B07EEAD000C3822 /* JSCoord.m */; };
+		90AA58841B07EEAD000C3822 /* JSMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587A1B07EEAD000C3822 /* JSMain.m */; };
+		90AA58851B07EEAD000C3822 /* JSSys.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587C1B07EEAD000C3822 /* JSSys.m */; };
+		90AA58861B07EEAD000C3822 /* JSWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587E1B07EEAD000C3822 /* JSWeather.m */; };
+		90AA58871B07EEAD000C3822 /* JSWind.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58801B07EEAD000C3822 /* JSWind.m */; };
 		90E8804C1AFE6884003A3D80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E8804B1AFE6884003A3D80 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +49,24 @@
 		900F3AC41AFE5497007ABDDE /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		900F3AC91AFE5497007ABDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		900F3ACA1AFE5497007ABDDE /* WeatherAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherAppTests.m; sourceTree = "<group>"; };
+		90312EB21B07A4400083B8A1 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
+		90312EB81B07A81C0083B8A1 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = ../RestClient.h; sourceTree = "<group>"; };
+		90312EB91B07A81C0083B8A1 /* RestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestClient.m; path = ../RestClient.m; sourceTree = "<group>"; };
+		90AA58721B07EEAD000C3822 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		90AA58731B07EEAD000C3822 /* JSBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBaseClass.h; sourceTree = "<group>"; };
+		90AA58741B07EEAD000C3822 /* JSBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBaseClass.m; sourceTree = "<group>"; };
+		90AA58751B07EEAD000C3822 /* JSClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSClouds.h; sourceTree = "<group>"; };
+		90AA58761B07EEAD000C3822 /* JSClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSClouds.m; sourceTree = "<group>"; };
+		90AA58771B07EEAD000C3822 /* JSCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoord.h; sourceTree = "<group>"; };
+		90AA58781B07EEAD000C3822 /* JSCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoord.m; sourceTree = "<group>"; };
+		90AA58791B07EEAD000C3822 /* JSMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMain.h; sourceTree = "<group>"; };
+		90AA587A1B07EEAD000C3822 /* JSMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMain.m; sourceTree = "<group>"; };
+		90AA587B1B07EEAD000C3822 /* JSSys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSys.h; sourceTree = "<group>"; };
+		90AA587C1B07EEAD000C3822 /* JSSys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSys.m; sourceTree = "<group>"; };
+		90AA587D1B07EEAD000C3822 /* JSWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWeather.h; sourceTree = "<group>"; };
+		90AA587E1B07EEAD000C3822 /* JSWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWeather.m; sourceTree = "<group>"; };
+		90AA587F1B07EEAD000C3822 /* JSWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWind.h; sourceTree = "<group>"; };
+		90AA58801B07EEAD000C3822 /* JSWind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWind.m; sourceTree = "<group>"; };
 		90E8804B1AFE6884003A3D80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -85,6 +111,8 @@
 		900F3AAD1AFE5497007ABDDE /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				90312EBC1B07EC9B0083B8A1 /* JSONObjects */,
+				90312EBB1B07A8350083B8A1 /* WebCalls */,
 				900F3AB21AFE5497007ABDDE /* AppDelegate.h */,
 				900F3AB31AFE5497007ABDDE /* AppDelegate.m */,
 				900F3AB51AFE5497007ABDDE /* ViewController.h */,
@@ -121,6 +149,38 @@
 				900F3AC91AFE5497007ABDDE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90312EBB1B07A8350083B8A1 /* WebCalls */ = {
+			isa = PBXGroup;
+			children = (
+				90312EB21B07A4400083B8A1 /* WeatherAPI.h */,
+				90312EB81B07A81C0083B8A1 /* RestClient.h */,
+				90312EB91B07A81C0083B8A1 /* RestClient.m */,
+			);
+			name = WebCalls;
+			sourceTree = "<group>";
+		};
+		90312EBC1B07EC9B0083B8A1 /* JSONObjects */ = {
+			isa = PBXGroup;
+			children = (
+				90AA58721B07EEAD000C3822 /* DataModels.h */,
+				90AA58731B07EEAD000C3822 /* JSBaseClass.h */,
+				90AA58741B07EEAD000C3822 /* JSBaseClass.m */,
+				90AA58751B07EEAD000C3822 /* JSClouds.h */,
+				90AA58761B07EEAD000C3822 /* JSClouds.m */,
+				90AA58771B07EEAD000C3822 /* JSCoord.h */,
+				90AA58781B07EEAD000C3822 /* JSCoord.m */,
+				90AA58791B07EEAD000C3822 /* JSMain.h */,
+				90AA587A1B07EEAD000C3822 /* JSMain.m */,
+				90AA587B1B07EEAD000C3822 /* JSSys.h */,
+				90AA587C1B07EEAD000C3822 /* JSSys.m */,
+				90AA587D1B07EEAD000C3822 /* JSWeather.h */,
+				90AA587E1B07EEAD000C3822 /* JSWeather.m */,
+				90AA587F1B07EEAD000C3822 /* JSWind.h */,
+				90AA58801B07EEAD000C3822 /* JSWind.m */,
+			);
+			name = JSONObjects;
 			sourceTree = "<group>";
 		};
 		90E8804D1AFE6891003A3D80 /* Frameworks */ = {
@@ -231,8 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90AA58871B07EEAD000C3822 /* JSWind.m in Sources */,
 				900F3AB71AFE5497007ABDDE /* ViewController.m in Sources */,
+				90AA58861B07EEAD000C3822 /* JSWeather.m in Sources */,
+				90AA58811B07EEAD000C3822 /* JSBaseClass.m in Sources */,
 				900F3AB41AFE5497007ABDDE /* AppDelegate.m in Sources */,
+				90312EBA1B07A81C0083B8A1 /* RestClient.m in Sources */,
+				90AA58831B07EEAD000C3822 /* JSCoord.m in Sources */,
+				90AA58841B07EEAD000C3822 /* JSMain.m in Sources */,
+				90AA58851B07EEAD000C3822 /* JSSys.m in Sources */,
+				90AA58821B07EEAD000C3822 /* JSClouds.m in Sources */,
 				900F3AB11AFE5497007ABDDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

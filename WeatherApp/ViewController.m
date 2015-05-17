@@ -7,16 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "RestClient.h"
+#import "DataModels.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *mCoordinateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mLatitude;
 @property (weak, nonatomic) IBOutlet UILabel *mLongitude;
+@property (weak, nonatomic) IBOutlet UILabel *mTemperature;
+@property (weak, nonatomic) IBOutlet UILabel *mConditions;
+@property (weak, nonatomic) IBOutlet UIImageView *mWeatherIcon;
 
 @end
 
 @implementation ViewController
-@synthesize mCoordinateLabel;
 @synthesize mLatitude;
 @synthesize mLongitude;
 
@@ -25,40 +28,18 @@
     
     mLocationManager = [[CLLocationManager alloc] init];
     
-    mCoordinateLabel.text = @"The weather is: ";
+    [self mGetCurrentLocation];
     
-    //this call is synchronous and takes too long
-    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"]];
-    NSString* returnedValue = [[NSString alloc] initWithData: allCoursesData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", returnedValue);
-    
-    NSError *error = nil;
-    
-    //parse json
-    id object = [NSJSONSerialization JSONObjectWithData:allCoursesData options:NSJSONReadingAllowFragments error:&error];
-    
-    if(error) {
-        NSLog(@"There was an error parsing JSON");
-    }
-    else {
-        if([object isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *parsedJSON = (NSDictionary*) object;
-            for(NSString *key in [parsedJSON allKeys]) {
-                NSLog(@"%@",[parsedJSON objectForKey:key]);
-            }
-            NSDictionary *main = [parsedJSON objectForKey:@"main"];
-            NSNumber *temp = [main objectForKey: @"temp"];
-        }
-           
-    }
 }
 
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-- (IBAction)mGetCurrentLocation:(id)sender {
-    mLocationManager.delegate = self;
+- (void)mGetCurrentLocation {
+    mLocationManager.delegate = self;   //store a reference from my class in CLLocation
     mLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    mLocationManager.distanceFilter = 5000; //uodate when your location has changed by 5km
+    
     
     if(IS_OS_8_OR_LATER){
         NSUInteger code = [CLLocationManager authorizationStatus];
@@ -74,29 +55,40 @@
         }
     }
     
-    [mLocationManager startUpdatingLocation];
+    [mLocationManager startMonitoringSignificantLocationChanges];
 }
 
 
 
 #pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
         mLongitude.text = [NSString stringWithFormat:@"Long: %.8f", currentLocation.coordinate.longitude];
         mLatitude.text = [NSString stringWithFormat:@"Lat: %.8f", currentLocation.coordinate.latitude];
+        [mLocationManager stopUpdatingLocation];
+        
+        RestClient* weatherAPI = [[RestClient alloc] init];
+        [weatherAPI getWeatherAtLocation:currentLocation WithCallback:^(JSBaseClass *jsonObject, NSError *error) {
+            if(error != nil) {
+                NSLog(@"error");
+                [self onError];
+            } else {
+                NSLog(@"success");
+                [self onSuccess:jsonObject];
+            }
+            
+        }];
     }
 }
 
@@ -105,5 +97,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - API handling
+
+- (void)onError {
+
+    NSAssert([NSThread isMainThread], @"Method called on non UI thread");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Really reset?" message:@"Do you really want to reset this game?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    // optional - add more buttons:
+    [alert addButtonWithTitle:@"Yes"];
+    [alert show];
+    
+}
+
+- (void)onSuccess:(JSBaseClass*) baseObject {
+    self.mTemperature.text = [NSString stringWithFormat:@"%.0f℃", baseObject.main.temp];
+    JSWeather* weather = [baseObject.weather objectAtIndex:0];
+    self.mConditions.text = weather.weatherDescription;
+    
+    NSString* icon = weather.icon;
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        //runs on background thread
+        NSString* url = [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", icon];
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: url]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+          self.mWeatherIcon.image = [UIImage imageWithData: imageData];
+        });
+    });
+}
+
++(void)getImage:(NSString*)url Into:(UIImageView*)imageView {
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        //runs on background thread
+        NSData* dataFromUrl = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            imageView.image = [UIImage imageWithData: dataFromUrl];
+        });
+    });
+}
 
 @end
