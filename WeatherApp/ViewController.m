@@ -116,14 +116,8 @@
     
     NSString* icon = weather.icon;
     
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
-        //runs on background thread
-        NSString* url = [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", icon];
-        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: url]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-          self.mWeatherIcon.image = [UIImage imageWithData: imageData];
-        });
-    });
+    NSString* url = [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", icon];
+    [ViewController getImage:url Into:self.mWeatherIcon];
 }
 
 +(void)getImage:(NSString*)url Into:(UIImageView*)imageView {

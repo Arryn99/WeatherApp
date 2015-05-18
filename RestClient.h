@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "WeatherAPI.h"
 
-@interface RestClient : NSObject <WeatherAPI>
+@interface RestClient : NSObject <WeatherAPI> 
 
 @end
