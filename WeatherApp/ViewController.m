@@ -79,7 +79,7 @@
         [mLocationManager stopUpdatingLocation];
         
         RestClient* weatherAPI = [[RestClient alloc] init];
-        [weatherAPI getWeatherAtLocation:currentLocation WithCallback:^(JSBaseClass *jsonObject, NSError *error) {
+        [weatherAPI getWeatherAtLocation:currentLocation WithCallback:^(JSCurrentWeatherResponse *jsonObject, NSError *error) {
             if(error != nil) {
                 NSLog(@"error");
                 [self onError];
@@ -87,7 +87,6 @@
                 NSLog(@"success");
                 [self onSuccess:jsonObject];
             }
-            
         }];
     }
 }
@@ -109,7 +108,7 @@
     
 }
 
-- (void)onSuccess:(JSBaseClass*) baseObject {
+- (void)onSuccess:(JSCurrentWeatherResponse*) baseObject {
     self.mTemperature.text = [NSString stringWithFormat:@"%.0f℃", baseObject.main.temp];
     JSWeather* weather = [baseObject.weather objectAtIndex:0];
     self.mConditions.text = weather.weatherDescription;

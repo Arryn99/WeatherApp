@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "JSBaseClass.h"
+#import "DataModels.h"
 
 @protocol WeatherAPI <NSObject>
 
 @required
--(void) getWeatherAtLocation: (CLLocation*)currentLocation WithCallback:(void(^)(JSBaseClass *, NSError*))callback;
+-(void) getWeatherAtLocation: (CLLocation*)currentLocation WithCallback:(void(^)(JSCurrentWeatherResponse *, NSError*))callback;
 
--(void) getWeatherAtLocation: (CLLocation*)currentLocation AtTime:(NSDate*) date WithCallback:(void(^)(NSDictionary*, NSError*))callback;
+-(void) getWeatherAtLocation: (CLLocation*)currentLocation AtTime:(NSDate*) date WithCallback:(void(^)(JSBaseClass*, NSError*))callback;
 
 @end

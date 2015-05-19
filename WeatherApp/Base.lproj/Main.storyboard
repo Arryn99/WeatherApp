@@ -187,5 +187,12 @@
             </objects>
             <point key="canvasLocation" x="211" y="428"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ykZ-rG-cFT">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xpd-st-uGA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="088-Ut-8g0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
 </document>

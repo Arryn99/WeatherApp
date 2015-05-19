@@ -15,13 +15,19 @@
 		900F3ABF1AFE5497007ABDDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */; };
 		900F3ACB1AFE5497007ABDDE /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3ACA1AFE5497007ABDDE /* WeatherAppTests.m */; };
 		90312EBA1B07A81C0083B8A1 /* RestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 90312EB91B07A81C0083B8A1 /* RestClient.m */; };
-		90AA58811B07EEAD000C3822 /* JSBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58741B07EEAD000C3822 /* JSBaseClass.m */; };
+		90AA58811B07EEAD000C3822 /* JSCurrentWeatherResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58741B07EEAD000C3822 /* JSCurrentWeatherResponse.m */; };
 		90AA58821B07EEAD000C3822 /* JSClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58761B07EEAD000C3822 /* JSClouds.m */; };
 		90AA58831B07EEAD000C3822 /* JSCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58781B07EEAD000C3822 /* JSCoord.m */; };
 		90AA58841B07EEAD000C3822 /* JSMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587A1B07EEAD000C3822 /* JSMain.m */; };
 		90AA58851B07EEAD000C3822 /* JSSys.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587C1B07EEAD000C3822 /* JSSys.m */; };
 		90AA58861B07EEAD000C3822 /* JSWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA587E1B07EEAD000C3822 /* JSWeather.m */; };
 		90AA58871B07EEAD000C3822 /* JSWind.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA58801B07EEAD000C3822 /* JSWind.m */; };
+		90CB41671B0BC078006C0E0D /* JSBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41601B0BC078006C0E0D /* JSBaseClass.m */; };
+		90CB41681B0BC078006C0E0D /* JSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41621B0BC078006C0E0D /* JSCity.m */; };
+		90CB41691B0BC078006C0E0D /* JSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41641B0BC078006C0E0D /* JSList.m */; };
+		90CB416A1B0BC078006C0E0D /* JSTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41661B0BC078006C0E0D /* JSTemp.m */; };
+		90CB416C1B0BC9D3006C0E0D /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */; };
+		90CB416F1B0BCC3E006C0E0D /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB416E1B0BCC3E006C0E0D /* WeatherView.m */; };
 		90E8804C1AFE6884003A3D80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E8804B1AFE6884003A3D80 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +59,8 @@
 		90312EB81B07A81C0083B8A1 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = ../RestClient.h; sourceTree = "<group>"; };
 		90312EB91B07A81C0083B8A1 /* RestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestClient.m; path = ../RestClient.m; sourceTree = "<group>"; };
 		90AA58721B07EEAD000C3822 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
-		90AA58731B07EEAD000C3822 /* JSBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBaseClass.h; sourceTree = "<group>"; };
-		90AA58741B07EEAD000C3822 /* JSBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBaseClass.m; sourceTree = "<group>"; };
+		90AA58731B07EEAD000C3822 /* JSCurrentWeatherResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCurrentWeatherResponse.h; sourceTree = "<group>"; };
+		90AA58741B07EEAD000C3822 /* JSCurrentWeatherResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCurrentWeatherResponse.m; sourceTree = "<group>"; };
 		90AA58751B07EEAD000C3822 /* JSClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSClouds.h; sourceTree = "<group>"; };
 		90AA58761B07EEAD000C3822 /* JSClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSClouds.m; sourceTree = "<group>"; };
 		90AA58771B07EEAD000C3822 /* JSCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoord.h; sourceTree = "<group>"; };
@@ -67,6 +73,17 @@
 		90AA587E1B07EEAD000C3822 /* JSWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWeather.m; sourceTree = "<group>"; };
 		90AA587F1B07EEAD000C3822 /* JSWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWind.h; sourceTree = "<group>"; };
 		90AA58801B07EEAD000C3822 /* JSWind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWind.m; sourceTree = "<group>"; };
+		90CB415F1B0BC078006C0E0D /* JSBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBaseClass.h; sourceTree = "<group>"; };
+		90CB41601B0BC078006C0E0D /* JSBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBaseClass.m; sourceTree = "<group>"; };
+		90CB41611B0BC078006C0E0D /* JSCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCity.h; sourceTree = "<group>"; };
+		90CB41621B0BC078006C0E0D /* JSCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCity.m; sourceTree = "<group>"; };
+		90CB41631B0BC078006C0E0D /* JSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSList.h; sourceTree = "<group>"; };
+		90CB41641B0BC078006C0E0D /* JSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSList.m; sourceTree = "<group>"; };
+		90CB41651B0BC078006C0E0D /* JSTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTemp.h; sourceTree = "<group>"; };
+		90CB41661B0BC078006C0E0D /* JSTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTemp.m; sourceTree = "<group>"; };
+		90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		90CB416D1B0BCC3E006C0E0D /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
+		90CB416E1B0BCC3E006C0E0D /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
 		90E8804B1AFE6884003A3D80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +138,9 @@
 				900F3ABB1AFE5497007ABDDE /* Images.xcassets */,
 				900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */,
 				900F3AAE1AFE5497007ABDDE /* Supporting Files */,
+				90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */,
+				90CB416D1B0BCC3E006C0E0D /* WeatherView.h */,
+				90CB416E1B0BCC3E006C0E0D /* WeatherView.m */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -164,9 +184,17 @@
 		90312EBC1B07EC9B0083B8A1 /* JSONObjects */ = {
 			isa = PBXGroup;
 			children = (
+				90CB415F1B0BC078006C0E0D /* JSBaseClass.h */,
+				90CB41601B0BC078006C0E0D /* JSBaseClass.m */,
+				90CB41611B0BC078006C0E0D /* JSCity.h */,
+				90CB41621B0BC078006C0E0D /* JSCity.m */,
+				90CB41631B0BC078006C0E0D /* JSList.h */,
+				90CB41641B0BC078006C0E0D /* JSList.m */,
+				90CB41651B0BC078006C0E0D /* JSTemp.h */,
+				90CB41661B0BC078006C0E0D /* JSTemp.m */,
 				90AA58721B07EEAD000C3822 /* DataModels.h */,
-				90AA58731B07EEAD000C3822 /* JSBaseClass.h */,
-				90AA58741B07EEAD000C3822 /* JSBaseClass.m */,
+				90AA58731B07EEAD000C3822 /* JSCurrentWeatherResponse.h */,
+				90AA58741B07EEAD000C3822 /* JSCurrentWeatherResponse.m */,
 				90AA58751B07EEAD000C3822 /* JSClouds.h */,
 				90AA58761B07EEAD000C3822 /* JSClouds.m */,
 				90AA58771B07EEAD000C3822 /* JSCoord.h */,
@@ -274,6 +302,7 @@
 				900F3ABA1AFE5497007ABDDE /* Main.storyboard in Resources */,
 				900F3ABF1AFE5497007ABDDE /* LaunchScreen.xib in Resources */,
 				900F3ABC1AFE5497007ABDDE /* Images.xcassets in Resources */,
+				90CB416C1B0BC9D3006C0E0D /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +323,18 @@
 				90AA58871B07EEAD000C3822 /* JSWind.m in Sources */,
 				900F3AB71AFE5497007ABDDE /* ViewController.m in Sources */,
 				90AA58861B07EEAD000C3822 /* JSWeather.m in Sources */,
-				90AA58811B07EEAD000C3822 /* JSBaseClass.m in Sources */,
+				90CB416F1B0BCC3E006C0E0D /* WeatherView.m in Sources */,
+				90AA58811B07EEAD000C3822 /* JSCurrentWeatherResponse.m in Sources */,
+				90CB41691B0BC078006C0E0D /* JSList.m in Sources */,
 				900F3AB41AFE5497007ABDDE /* AppDelegate.m in Sources */,
+				90CB41681B0BC078006C0E0D /* JSCity.m in Sources */,
 				90312EBA1B07A81C0083B8A1 /* RestClient.m in Sources */,
 				90AA58831B07EEAD000C3822 /* JSCoord.m in Sources */,
 				90AA58841B07EEAD000C3822 /* JSMain.m in Sources */,
 				90AA58851B07EEAD000C3822 /* JSSys.m in Sources */,
+				90CB416A1B0BC078006C0E0D /* JSTemp.m in Sources */,
 				90AA58821B07EEAD000C3822 /* JSClouds.m in Sources */,
+				90CB41671B0BC078006C0E0D /* JSBaseClass.m in Sources */,
 				900F3AB11AFE5497007ABDDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,30 +1,20 @@
 //
 //  JSBaseClass.m
 //
-//  Created by   on 16/05/2015
+//  Created by   on 19/05/2015
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
 #import "JSBaseClass.h"
-#import "JSWind.h"
-#import "JSClouds.h"
-#import "JSCoord.h"
-#import "JSWeather.h"
-#import "JSMain.h"
-#import "JSSys.h"
+#import "JSCity.h"
+#import "JSList.h"
 
 
-NSString *const kJSBaseClassWind = @"wind";
-NSString *const kJSBaseClassBase = @"base";
-NSString *const kJSBaseClassClouds = @"clouds";
-NSString *const kJSBaseClassCoord = @"coord";
-NSString *const kJSBaseClassId = @"id";
-NSString *const kJSBaseClassDt = @"dt";
+NSString *const kJSBaseClassMessage = @"message";
 NSString *const kJSBaseClassCod = @"cod";
-NSString *const kJSBaseClassWeather = @"weather";
-NSString *const kJSBaseClassMain = @"main";
-NSString *const kJSBaseClassSys = @"sys";
-NSString *const kJSBaseClassName = @"name";
+NSString *const kJSBaseClassCity = @"city";
+NSString *const kJSBaseClassCnt = @"cnt";
+NSString *const kJSBaseClassList = @"list";
 
 
 @interface JSBaseClass ()
@@ -35,17 +25,11 @@ NSString *const kJSBaseClassName = @"name";
 
 @implementation JSBaseClass
 
-@synthesize wind = _wind;
-@synthesize base = _base;
-@synthesize clouds = _clouds;
-@synthesize coord = _coord;
-@synthesize internalBaseClassIdentifier = _internalBaseClassIdentifier;
-@synthesize dt = _dt;
+@synthesize message = _message;
 @synthesize cod = _cod;
-@synthesize weather = _weather;
-@synthesize main = _main;
-@synthesize sys = _sys;
-@synthesize name = _name;
+@synthesize city = _city;
+@synthesize cnt = _cnt;
+@synthesize list = _list;
 
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
@@ -60,29 +44,23 @@ NSString *const kJSBaseClassName = @"name";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.wind = [JSWind modelObjectWithDictionary:[dict objectForKey:kJSBaseClassWind]];
-            self.base = [self objectOrNilForKey:kJSBaseClassBase fromDictionary:dict];
-            self.clouds = [JSClouds modelObjectWithDictionary:[dict objectForKey:kJSBaseClassClouds]];
-            self.coord = [JSCoord modelObjectWithDictionary:[dict objectForKey:kJSBaseClassCoord]];
-            self.internalBaseClassIdentifier = [[self objectOrNilForKey:kJSBaseClassId fromDictionary:dict] doubleValue];
-            self.dt = [[self objectOrNilForKey:kJSBaseClassDt fromDictionary:dict] doubleValue];
-            self.cod = [[self objectOrNilForKey:kJSBaseClassCod fromDictionary:dict] doubleValue];
-    NSObject *receivedJSWeather = [dict objectForKey:kJSBaseClassWeather];
-    NSMutableArray *parsedJSWeather = [NSMutableArray array];
-    if ([receivedJSWeather isKindOfClass:[NSArray class]]) {
-        for (NSDictionary *item in (NSArray *)receivedJSWeather) {
+            self.message = [[self objectOrNilForKey:kJSBaseClassMessage fromDictionary:dict] doubleValue];
+            self.cod = [self objectOrNilForKey:kJSBaseClassCod fromDictionary:dict];
+            self.city = [JSCity modelObjectWithDictionary:[dict objectForKey:kJSBaseClassCity]];
+            self.cnt = [[self objectOrNilForKey:kJSBaseClassCnt fromDictionary:dict] doubleValue];
+    NSObject *receivedJSList = [dict objectForKey:kJSBaseClassList];
+    NSMutableArray *parsedJSList = [NSMutableArray array];
+    if ([receivedJSList isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *item in (NSArray *)receivedJSList) {
             if ([item isKindOfClass:[NSDictionary class]]) {
-                [parsedJSWeather addObject:[JSWeather modelObjectWithDictionary:item]];
+                [parsedJSList addObject:[JSList modelObjectWithDictionary:item]];
             }
        }
-    } else if ([receivedJSWeather isKindOfClass:[NSDictionary class]]) {
-       [parsedJSWeather addObject:[JSWeather modelObjectWithDictionary:(NSDictionary *)receivedJSWeather]];
+    } else if ([receivedJSList isKindOfClass:[NSDictionary class]]) {
+       [parsedJSList addObject:[JSList modelObjectWithDictionary:(NSDictionary *)receivedJSList]];
     }
 
-    self.weather = [NSArray arrayWithArray:parsedJSWeather];
-            self.main = [JSMain modelObjectWithDictionary:[dict objectForKey:kJSBaseClassMain]];
-            self.sys = [JSSys modelObjectWithDictionary:[dict objectForKey:kJSBaseClassSys]];
-            self.name = [self objectOrNilForKey:kJSBaseClassName fromDictionary:dict];
+    self.list = [NSArray arrayWithArray:parsedJSList];
 
     }
     
@@ -93,27 +71,21 @@ NSString *const kJSBaseClassName = @"name";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:[self.wind dictionaryRepresentation] forKey:kJSBaseClassWind];
-    [mutableDict setValue:self.base forKey:kJSBaseClassBase];
-    [mutableDict setValue:[self.clouds dictionaryRepresentation] forKey:kJSBaseClassClouds];
-    [mutableDict setValue:[self.coord dictionaryRepresentation] forKey:kJSBaseClassCoord];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.internalBaseClassIdentifier] forKey:kJSBaseClassId];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.dt] forKey:kJSBaseClassDt];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.cod] forKey:kJSBaseClassCod];
-    NSMutableArray *tempArrayForWeather = [NSMutableArray array];
-    for (NSObject *subArrayObject in self.weather) {
+    [mutableDict setValue:[NSNumber numberWithDouble:self.message] forKey:kJSBaseClassMessage];
+    [mutableDict setValue:self.cod forKey:kJSBaseClassCod];
+    [mutableDict setValue:[self.city dictionaryRepresentation] forKey:kJSBaseClassCity];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.cnt] forKey:kJSBaseClassCnt];
+    NSMutableArray *tempArrayForList = [NSMutableArray array];
+    for (NSObject *subArrayObject in self.list) {
         if([subArrayObject respondsToSelector:@selector(dictionaryRepresentation)]) {
             // This class is a model object
-            [tempArrayForWeather addObject:[subArrayObject performSelector:@selector(dictionaryRepresentation)]];
+            [tempArrayForList addObject:[subArrayObject performSelector:@selector(dictionaryRepresentation)]];
         } else {
             // Generic object
-            [tempArrayForWeather addObject:subArrayObject];
+            [tempArrayForList addObject:subArrayObject];
         }
     }
-    [mutableDict setValue:[NSArray arrayWithArray:tempArrayForWeather] forKey:kJSBaseClassWeather];
-    [mutableDict setValue:[self.main dictionaryRepresentation] forKey:kJSBaseClassMain];
-    [mutableDict setValue:[self.sys dictionaryRepresentation] forKey:kJSBaseClassSys];
-    [mutableDict setValue:self.name forKey:kJSBaseClassName];
+    [mutableDict setValue:[NSArray arrayWithArray:tempArrayForList] forKey:kJSBaseClassList];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -137,34 +109,22 @@ NSString *const kJSBaseClassName = @"name";
 {
     self = [super init];
 
-    self.wind = [aDecoder decodeObjectForKey:kJSBaseClassWind];
-    self.base = [aDecoder decodeObjectForKey:kJSBaseClassBase];
-    self.clouds = [aDecoder decodeObjectForKey:kJSBaseClassClouds];
-    self.coord = [aDecoder decodeObjectForKey:kJSBaseClassCoord];
-    self.internalBaseClassIdentifier = [aDecoder decodeDoubleForKey:kJSBaseClassId];
-    self.dt = [aDecoder decodeDoubleForKey:kJSBaseClassDt];
-    self.cod = [aDecoder decodeDoubleForKey:kJSBaseClassCod];
-    self.weather = [aDecoder decodeObjectForKey:kJSBaseClassWeather];
-    self.main = [aDecoder decodeObjectForKey:kJSBaseClassMain];
-    self.sys = [aDecoder decodeObjectForKey:kJSBaseClassSys];
-    self.name = [aDecoder decodeObjectForKey:kJSBaseClassName];
+    self.message = [aDecoder decodeDoubleForKey:kJSBaseClassMessage];
+    self.cod = [aDecoder decodeObjectForKey:kJSBaseClassCod];
+    self.city = [aDecoder decodeObjectForKey:kJSBaseClassCity];
+    self.cnt = [aDecoder decodeDoubleForKey:kJSBaseClassCnt];
+    self.list = [aDecoder decodeObjectForKey:kJSBaseClassList];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_wind forKey:kJSBaseClassWind];
-    [aCoder encodeObject:_base forKey:kJSBaseClassBase];
-    [aCoder encodeObject:_clouds forKey:kJSBaseClassClouds];
-    [aCoder encodeObject:_coord forKey:kJSBaseClassCoord];
-    [aCoder encodeDouble:_internalBaseClassIdentifier forKey:kJSBaseClassId];
-    [aCoder encodeDouble:_dt forKey:kJSBaseClassDt];
-    [aCoder encodeDouble:_cod forKey:kJSBaseClassCod];
-    [aCoder encodeObject:_weather forKey:kJSBaseClassWeather];
-    [aCoder encodeObject:_main forKey:kJSBaseClassMain];
-    [aCoder encodeObject:_sys forKey:kJSBaseClassSys];
-    [aCoder encodeObject:_name forKey:kJSBaseClassName];
+    [aCoder encodeDouble:_message forKey:kJSBaseClassMessage];
+    [aCoder encodeObject:_cod forKey:kJSBaseClassCod];
+    [aCoder encodeObject:_city forKey:kJSBaseClassCity];
+    [aCoder encodeDouble:_cnt forKey:kJSBaseClassCnt];
+    [aCoder encodeObject:_list forKey:kJSBaseClassList];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -173,17 +133,11 @@ NSString *const kJSBaseClassName = @"name";
     
     if (copy) {
 
-        copy.wind = [self.wind copyWithZone:zone];
-        copy.base = [self.base copyWithZone:zone];
-        copy.clouds = [self.clouds copyWithZone:zone];
-        copy.coord = [self.coord copyWithZone:zone];
-        copy.internalBaseClassIdentifier = self.internalBaseClassIdentifier;
-        copy.dt = self.dt;
-        copy.cod = self.cod;
-        copy.weather = [self.weather copyWithZone:zone];
-        copy.main = [self.main copyWithZone:zone];
-        copy.sys = [self.sys copyWithZone:zone];
-        copy.name = [self.name copyWithZone:zone];
+        copy.message = self.message;
+        copy.cod = [self.cod copyWithZone:zone];
+        copy.city = [self.city copyWithZone:zone];
+        copy.cnt = self.cnt;
+        copy.list = [self.list copyWithZone:zone];
     }
     
     return copy;
