@@ -10,7 +10,6 @@
 		900F3AB11AFE5497007ABDDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3AB01AFE5497007ABDDE /* main.m */; };
 		900F3AB41AFE5497007ABDDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3AB31AFE5497007ABDDE /* AppDelegate.m */; };
 		900F3AB71AFE5497007ABDDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3AB61AFE5497007ABDDE /* ViewController.m */; };
-		900F3ABA1AFE5497007ABDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900F3AB81AFE5497007ABDDE /* Main.storyboard */; };
 		900F3ABC1AFE5497007ABDDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900F3ABB1AFE5497007ABDDE /* Images.xcassets */; };
 		900F3ABF1AFE5497007ABDDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */; };
 		900F3ACB1AFE5497007ABDDE /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F3ACA1AFE5497007ABDDE /* WeatherAppTests.m */; };
@@ -26,8 +25,10 @@
 		90CB41681B0BC078006C0E0D /* JSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41621B0BC078006C0E0D /* JSCity.m */; };
 		90CB41691B0BC078006C0E0D /* JSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41641B0BC078006C0E0D /* JSList.m */; };
 		90CB416A1B0BC078006C0E0D /* JSTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41661B0BC078006C0E0D /* JSTemp.m */; };
-		90CB416C1B0BC9D3006C0E0D /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */; };
 		90CB416F1B0BCC3E006C0E0D /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB416E1B0BCC3E006C0E0D /* WeatherView.m */; };
+		90CB41741B0BDB3D006C0E0D /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41711B0BDB3D006C0E0D /* PageContentViewController.m */; };
+		90CB41751B0BDB3D006C0E0D /* PagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CB41731B0BDB3D006C0E0D /* PagingViewController.m */; };
+		90CB417A1B0BDCC6006C0E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CB41791B0BDCC6006C0E0D /* Main.storyboard */; };
 		90E8804C1AFE6884003A3D80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E8804B1AFE6884003A3D80 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,6 @@
 		900F3AB31AFE5497007ABDDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		900F3AB51AFE5497007ABDDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		900F3AB61AFE5497007ABDDE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		900F3AB91AFE5497007ABDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900F3ABB1AFE5497007ABDDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		900F3ABE1AFE5497007ABDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		900F3AC41AFE5497007ABDDE /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,9 +81,13 @@
 		90CB41641B0BC078006C0E0D /* JSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSList.m; sourceTree = "<group>"; };
 		90CB41651B0BC078006C0E0D /* JSTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTemp.h; sourceTree = "<group>"; };
 		90CB41661B0BC078006C0E0D /* JSTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTemp.m; sourceTree = "<group>"; };
-		90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		90CB416D1B0BCC3E006C0E0D /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
 		90CB416E1B0BCC3E006C0E0D /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
+		90CB41701B0BDB3D006C0E0D /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		90CB41711B0BDB3D006C0E0D /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		90CB41721B0BDB3D006C0E0D /* PagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingViewController.h; sourceTree = "<group>"; };
+		90CB41731B0BDB3D006C0E0D /* PagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingViewController.m; sourceTree = "<group>"; };
+		90CB41791B0BDCC6006C0E0D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		90E8804B1AFE6884003A3D80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -128,17 +132,20 @@
 		900F3AAD1AFE5497007ABDDE /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				90CB41791B0BDCC6006C0E0D /* Main.storyboard */,
+				90CB41701B0BDB3D006C0E0D /* PageContentViewController.h */,
+				90CB41711B0BDB3D006C0E0D /* PageContentViewController.m */,
+				90CB41721B0BDB3D006C0E0D /* PagingViewController.h */,
+				90CB41731B0BDB3D006C0E0D /* PagingViewController.m */,
 				90312EBC1B07EC9B0083B8A1 /* JSONObjects */,
 				90312EBB1B07A8350083B8A1 /* WebCalls */,
 				900F3AB21AFE5497007ABDDE /* AppDelegate.h */,
 				900F3AB31AFE5497007ABDDE /* AppDelegate.m */,
 				900F3AB51AFE5497007ABDDE /* ViewController.h */,
 				900F3AB61AFE5497007ABDDE /* ViewController.m */,
-				900F3AB81AFE5497007ABDDE /* Main.storyboard */,
 				900F3ABB1AFE5497007ABDDE /* Images.xcassets */,
 				900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */,
 				900F3AAE1AFE5497007ABDDE /* Supporting Files */,
-				90CB416B1B0BC9D3006C0E0D /* WeatherView.xib */,
 				90CB416D1B0BCC3E006C0E0D /* WeatherView.h */,
 				90CB416E1B0BCC3E006C0E0D /* WeatherView.m */,
 			);
@@ -299,10 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900F3ABA1AFE5497007ABDDE /* Main.storyboard in Resources */,
 				900F3ABF1AFE5497007ABDDE /* LaunchScreen.xib in Resources */,
 				900F3ABC1AFE5497007ABDDE /* Images.xcassets in Resources */,
-				90CB416C1B0BC9D3006C0E0D /* WeatherView.xib in Resources */,
+				90CB417A1B0BDCC6006C0E0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +332,7 @@
 				90CB416F1B0BCC3E006C0E0D /* WeatherView.m in Sources */,
 				90AA58811B07EEAD000C3822 /* JSCurrentWeatherResponse.m in Sources */,
 				90CB41691B0BC078006C0E0D /* JSList.m in Sources */,
+				90CB41751B0BDB3D006C0E0D /* PagingViewController.m in Sources */,
 				900F3AB41AFE5497007ABDDE /* AppDelegate.m in Sources */,
 				90CB41681B0BC078006C0E0D /* JSCity.m in Sources */,
 				90312EBA1B07A81C0083B8A1 /* RestClient.m in Sources */,
@@ -335,6 +342,7 @@
 				90CB416A1B0BC078006C0E0D /* JSTemp.m in Sources */,
 				90AA58821B07EEAD000C3822 /* JSClouds.m in Sources */,
 				90CB41671B0BC078006C0E0D /* JSBaseClass.m in Sources */,
+				90CB41741B0BDB3D006C0E0D /* PageContentViewController.m in Sources */,
 				900F3AB11AFE5497007ABDDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,14 +366,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		900F3AB81AFE5497007ABDDE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				900F3AB91AFE5497007ABDDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		900F3ABD1AFE5497007ABDDE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

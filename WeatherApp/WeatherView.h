@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DataModels.h"
 @interface WeatherView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 
--(void)loadDataForView;
+-(void)loadDataForView:(JSList*) weather;
 
 @end

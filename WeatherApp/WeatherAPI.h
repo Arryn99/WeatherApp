@@ -15,6 +15,6 @@
 @required
 -(void) getWeatherAtLocation: (CLLocation*)currentLocation WithCallback:(void(^)(JSCurrentWeatherResponse *, NSError*))callback;
 
--(void) getWeatherAtLocation: (CLLocation*)currentLocation AtTime:(NSDate*) date WithCallback:(void(^)(JSBaseClass*, NSError*))callback;
+-(void) get7DayWeatherAtLocation: (CLLocation*)currentLocation WithCallback:(void(^)(JSBaseClass*, NSError*))callback;
 
 @end

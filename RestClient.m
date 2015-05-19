@@ -21,10 +21,10 @@
 }
 
 
--(void) getWeatherAtLocation: (CLLocation*)currentLocation AtTime:(NSDate*) date WithCallback:(void(^)(JSBaseClass*, NSError*))callback {
+-(void) get7DayWeatherAtLocation: (CLLocation*)currentLocation WithCallback:(void(^)(JSBaseClass*, NSError*))callback {
     NSString* url = @"http://api.openweathermap.org/data/2.5/forecast/daily?lat=%f&lon=%f&cnt=7&mode=json";
     NSString* completeURL = [NSString stringWithFormat:url, currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
-    [RestClient asyncWebCall:completeURL WithParameters:nil WithCallback:^(NSDictionary* jsonObject, NSError* error) {
+    [RestClient asyncWebCall:completeURL WithParameters:@"" WithCallback:^(NSDictionary* jsonObject, NSError* error) {
         callback([[JSBaseClass alloc]initWithDictionary:jsonObject], error);
     }];
 }
