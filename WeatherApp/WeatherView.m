@@ -11,11 +11,18 @@
 @implementation WeatherView
 
 -(void)loadDataForView:(JSList*) weather{
-    self.temperatureLabel.text = [NSString stringWithFormat:@"%f°C", weather.temp.day];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:weather.dt];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE MMM dd HH:mm:ss"];
+    
+    self.locationLabel.text = [dateFormatter stringFromDate:date];
+    
+    self.temperatureLabel.text = [NSString stringWithFormat:@"%.0f°C", weather.temp.day];
     JSWeather* jsweather = [weather.weather firstObject];
     if(jsweather != nil){
         NSString* url = [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", jsweather.icon];
         [WeatherView getImage:url Into:self.imageView];
+        self.weatherLabel.text = jsweather.weatherDescription;
     }
 }
 

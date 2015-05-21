@@ -14,6 +14,7 @@
 @interface PagingViewController (){
     NSMutableArray* weatherModels;
 }
+@property (weak, nonatomic) IBOutlet UILabel *mCityName;
 
 @end
 
@@ -37,6 +38,7 @@
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
+    [self.view bringSubviewToFront:self.mCityName];
     [self.pageViewController didMoveToParentViewController:self];
     
     mLocationManager = [[CLLocationManager alloc] init];
@@ -90,7 +92,7 @@
         return nil;
     }
     index++;
-    if (index  > [weatherModels count]) {
+    if (index  == [weatherModels count]) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
@@ -135,6 +137,19 @@
 
 #pragma mark - CLLocationManagerDelegate
 
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    if (status == kCLAuthorizationStatusDenied) {
+        // permission denied
+        UIAlertView *errorAlert = [[UIAlertView alloc]
+                                   initWithTitle:@"Error" message:@"This app won't work until you allow location services!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [errorAlert show];
+    }
+    else if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        // permission granted
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
@@ -175,8 +190,10 @@
 }
 
 - (void)onSuccess:(JSBaseClass*) baseObject {
+    self.mCityName.text = baseObject.city.name;
     [weatherModels removeAllObjects];
     weatherModels = [NSMutableArray arrayWithArray:baseObject.list];
+    [self startWalkthrough:nil];
     //NSString* url = [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", icon];
 }
 
